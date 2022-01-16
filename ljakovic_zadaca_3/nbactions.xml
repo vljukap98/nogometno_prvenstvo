@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs>-d DZ2_dogadaji.csv -u DZ2_utakmice.csv -s DZ2_sastavi_utakmica.csv -i DZ2_igraci.csv -k DZ2_klubovi.csv</exec.appArgs>
+                <exec.mainClass>hr.foi.ljakovic.ljakovic_zadaca_1.MainApplication</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <exec.workingdir>D:\Uni\UzDiz\ljakovic_zadaca_3\podaci</exec.workingdir>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs>-d DZ2_dogadaji.csv -u DZ2_utakmice.csv -s DZ2_sastavi_utakmica.csv -i DZ2_igraci.csv -k DZ2_klubovi.csv</exec.appArgs>
+                <exec.mainClass>hr.foi.ljakovic.ljakovic_zadaca_1.MainApplication</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+                <exec.workingdir>D:\Uni\UzDiz\ljakovic_zadaca_3\podaci</exec.workingdir>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.mainClass>hr.foi.ljakovic.ljakovic_zadaca_1.MainApplication</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <exec.appArgs>-d DZ2_dogadaji.csv -u DZ2_utakmice.csv -s DZ2_sastavi_utakmica.csv -i DZ2_igraci.csv -k DZ2_klubovi.csv</exec.appArgs>
+                <exec.workingdir>D:\Uni\UzDiz\ljakovic_zadaca_3\podaci</exec.workingdir>
+            </properties>
+        </action>
+    </actions>
